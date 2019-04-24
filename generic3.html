@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Features selection</title>
+		<title>Manual process</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -41,46 +41,63 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Descriptive statistics</a></li>
-							<li><a href="generic2.html">Hierarchical classification</a></li>
-							<li><a href="generic3.html">Features selection</a></li>
-							<li><a href="generic4.html">Model performance</a></li>
-							<li><a href="generic5.html">Results</a></li>
+							<li><a href="generic.html">Choice</a></li>
+							<li><a href="generic2.html">Automated process</a></li>
+							<li><a href="generic3.html">Manual process</a></li>
+
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Features selection</h1>
-							<div id="myDiv"></div>
-							<div id="features"></div>
-							<script>
-var trace1 = {
-  x: ['Tenure', 'Monthly <br> charges', 'Month <br> to <br> month', 'Fiber <br> optic'], 
-  y: [0.24, 0.21, 0.16, 0.05],
-  type: 'bar',
-  name: 'Gini importance',
-	marker: {
-    color: 'rgba(252,228,7, 0.7)',
-    line: {
-      color: 'rgba(153,153,153,1.0)',
-      width: 2
-    }
-  }
-};
-
-var data = [trace1];
-
-var layout = {
-  title: "Variables' Gini importance",
-  xaxis: {
-    tickangle: -45
-  },
-  barmode: 'group'
-};
-
-Plotly.newPlot('myDiv', data, layout);
+							<h1>Characteristics' selection</h1>
+							
+							<form action="generic.html" method="post">
+								<label for="name">Manual process</label>
+								
+								<fieldset>
+								  <div>
+								    <input type="checkbox" id="country" name="variables" value="country">
+								    <label for="country">Country of headquarters</label>
+								  </div>
+								  <div>
+								    <input type="checkbox" id="currency" name="variables" value="currency">
+								    <label for="currency">Currency</label>
+								  </div>
+								  <div>
+								    <input type="checkbox" id="industry_group_name" name="variables" value="industry_group_name">
+								    <label for="industry_group_name">Industry Group Name</label>
+								  </div>
+								  <div>
+								    <input type="checkbox" id="revenue_growth_FY2018" name="variables" value="revenue_growth_FY2018">
+								    <label for="revenue_growth_FY2018">Revenue growth FY2018 (%)</label>
+								  </div>
+								  <div>
+								    <input type="checkbox" id="ebitda_FY2017" name="variables" value="ebitda_FY2017">
+								    <label for="ebitda_FY2017">EBITDA FY2017 (EUR m)</label>
+								  </div>
+								  <div>
+								    <input type="checkbox" id="ebit" name="variables" value="ebit">
+								    <label for="ebit">EBIT (EUR m)</label>
+								  </div>
+								  <div>
+								    <input type="checkbox" id="net_income" name="variables" value="net_income">
+								    <label for="net_income">Net Income (EUR m)</label>
+								  </div>
+								  <div>
+								    <input type="checkbox" id="quick_ratio" name="variables" value="quick_ratio">
+								    <label for="quick_ratio">Quick ratio</label>
+								  </div>
+								</fieldset>
+								
+								<div class="button"> Submit </div>
+							</form>
+							
+							
+							
+							
+							
 							</script>
 							<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
