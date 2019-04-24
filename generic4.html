@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Model performance</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>		
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/EY_Logo_Beam.jpg" alt="" /></span><span class="title">Advanced analytics</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Descriptive statistics</a></li>
+							<li><a href="generic2.html">Hierarchical classification</a></li>
+							<li><a href="generic3.html">Features selection</a></li>
+							<li><a href="generic4.html">Model performance</a></li>
+							<li><a href="generic5.html">Results</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Neural network</h1>
+							<div class="column1">
+								<div id="matrix"></div>
+								<script>
+var data = [
+  {
+    z: [[0.25, 0.75], [0.78,0.22]],
+    x: ['No churn', 'Churn'],
+    y: ['Churn', 'No churn'],
+	colorscale: [
+    ['0.0', 'rgb(153,153,153)'],
+    ['0.111111111111', 'rgb(164,161,136)'],
+    ['0.222222222222', 'rgb(175,169,120)'],
+    ['0.333333333333', 'rgb(186,178,104)'],
+    ['0.444444444444', 'rgb(197,186,88)'],
+    ['0.555555555556', 'rgb(208,194,71)'],
+    ['0.666666666667', 'rgb(219,203,55)'],
+    ['0.777777777778', 'rgb(230,211,39)'],
+    ['0.888888888889', 'rgb(241,219,23)'],
+    ['1.0', 'rgb(252,228,7)']
+  ],
+    type: 'heatmap'
+  }
+];
+
+var layout = {
+  title: "<b>Normalised confusion matrix</b>",
+  xaxis: {
+      "title": "Predicted value"},
+	yaxis: {
+      "title": "Actual value"}
+};
+
+Plotly.newPlot('matrix', data, layout);
+
+				</script> </div>
+						<div class="column2">
+							<div id="matrix2"></div>
+								<script>
+var data2 = [
+  {
+    z: [[155, 454], [1331, 385]],
+    x: ['No churn', 'Churn'],
+    y: ['Churn', 'No churn'],
+	colorscale: 'Greens',
+	<!-- colorscale: [ -->
+    <!-- ['0.0', 'rgb(153,153,153)'], -->
+    <!-- ['250.1111111111111', 'rgb(136,154,155)'], -->
+    <!-- ['350.1111111111111', 'rgb(119,155,157)'], -->
+    <!-- ['450.1111111111111', 'rgb(102,156,160)'], -->
+    <!-- ['550.1111111111111', 'rgb(85,157,162)'], -->
+    <!-- ['650.1111111111111', 'rgb(68,158,164)'], -->
+    <!-- ['850.1111111111111', 'rgb(51,159,167)'], -->
+    <!-- ['1050.1111111111111', 'rgb(34,160,169)'], -->
+	<!-- ['1200.1111111111111', 'rgb(17,161,171)'], -->
+	<!-- ['1400.1111111111111', 'rgb(0,163,174)'] -->
+	<!-- ], -->
+    type: 'heatmap'	
+  }
+];
+
+var layout2 = {
+  title: "<b>Confusion matrix</b>",
+  xaxis: {
+      "title": "Predicted value"},
+	yaxis: {
+      "title": "Actual value"}
+};
+
+Plotly.newPlot('matrix2', data2, layout2);
+
+								</script> </div>
+				
+				<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+							
+	</body>
+</html>

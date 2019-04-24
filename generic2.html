@@ -1,0 +1,563 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hierarchichal classification</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/EY_Logo_Beam.jpg" alt="" /></span><span class="title">Advanced analytics</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Descriptive statistics</a></li>
+							<li><a href="generic2.html">Hierarchical classification</a></li>
+							<li><a href="generic3.html">Features selection</a></li>
+							<li><a href="generic4.html">Model performance</a></li>
+							<li><a href="generic5.html">Results</a></li>
+						</ul>
+					</nav>
+
+				<div id="main">
+						<div class="inner">
+							<h1>Two groups</h1>
+							<div class="column1">
+									<div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/"></a></div>
+									<script>							
+    var originalConfig =     {
+        "type":"ring",
+        "title":{
+          "text":"Churners"
+        },
+        "plot":{
+            "detach":false,
+            "cursor":"hande",
+            "shadow":8,
+            "tooltip":{
+                "visible":false
+            },
+            "animation":{
+                "delay":10,
+                "effect":"2",
+                "speed":"ANIMATION_SLOW",
+                "method":"1",
+                "sequence":"3",
+                "attributes":{
+                    
+                }
+            },
+            "value-box":{
+                "color":"#FFF",
+                "text":"%t",
+                "font-weight":"none",
+                "font-size":14
+            }
+        },
+        "series":[
+            {
+                "values":[69],
+                "background-color":"#999999",
+                "text":"Senior<br>citizens",
+                "data-id":"vt"
+            },
+            {
+                "values":[69],
+                "background-color":"#FCE407",
+                "text":"No<br>dependents",
+                "data-id":"sp"
+            },
+            {
+                "values":[69],
+                "background-color":"#2c973e",
+                "text":"No mobile<br>phone service",
+                "data-id":"dt"
+            },
+            {
+                "values":[69],
+                "background-color":"#91278f",
+                "text":"Low<br>monthly charges",
+                "data-id":"st"
+            },
+            {
+                "values":[69],
+                "background-color":"#00a3ae",           
+                "text":"No<br>Internet service",
+                "data-id":"dm"
+            }
+        ]
+    }
+     
+    zingchart.render({ 
+    	id : 'myChart', 
+    	data : originalConfig, 
+    	height: 450, 
+    	width: '100%' 
+    });
+     
+     
+     
+    /************************
+     *  Secondary Charts
+     * *********************/
+    var drilldownConfig = {
+        "type":"bar",
+        "title":{
+            "text":"Security Tools"
+        },
+        "plotarea": {
+            "margin":"dynamic"
+        },
+        "plot":{
+            "animation":{
+                "delay":10,
+                "effect":"4",
+                "speed":"1200",
+                "method":"1",
+                "sequence":"3"
+            },
+            "tooltip":{
+                "text": "Quantity: %v",
+                "shadow":true,
+                "shadowAlpha":.5,
+                "shadowBlur":2,
+                "shadowDistance":3,
+                "shadowColor":"#c4c4c4",
+                "borderWidth":0,
+                "font-size":18
+            }
+        },
+        "series":[
+            {
+                "values":[35,15,25,10],
+                "styles":["#1565C0","#42A5F5","#1E88E5","#90CAF9"]
+            }
+        ],
+        "scale-x":{
+            "line-color":"#555",
+            "tick":{
+                "line-color":"#555"
+            },
+            "values":["Firewall","Cache-control","Link-access","HTTP-Comp"],
+            "item":{
+            	"max-chars":9,
+                "color":"#555",
+                "font-size":12
+            },
+            "label":{
+                "text":"Type",
+                "color":"#555",
+                "font-weight":"none",
+                "font-size":16
+            }
+        },
+        "scale-y":{
+            "line-color":"#555",
+            "tick":{
+                "line-color":"#555"
+            },
+            "item":{
+                "color":"#555",
+                "font-size":12
+            },
+            "guide":{
+                "visible":false
+            },
+            "label":{
+                "text":"Quantity",
+                "color":"#555",
+                "font-weight":"none",
+                "font-size":16
+            }
+        },
+        "shapes":[
+           {
+            'x':20,
+            'y':20,
+            'size':10,
+            'angle':-90,
+            'type':'triangle',
+            'background-color':'#C4C4C4',
+            'padding':5,
+            'cursor':'hand',
+            'id': 'backwards'
+          }
+        ]
+    };
+     
+    /**
+     * Create associative array to manage drilldown config
+     */
+    var drilldownDataStructure = [];
+    drilldownDataStructure["vt"] = {
+        "data":[10,25,35],
+        "scale-labels":["Grid-component","Map-tool","Web-charting"],
+        "title":"Visualization Tools",
+        "colors":["#EF5350","#E53935","#C62828"]
+    };
+    drilldownDataStructure["sp"] = {
+        "data":[15,5,35,20],
+        "scale-labels":["Speed-test","Error-tracking","Load-testing","User-monitoring"],
+        "title":"Site Performance",
+        "colors":["#26A69A","#80CBC4","#00695C","#00897B"]
+    };
+    drilldownDataStructure["dt"] = {
+        "data":[20,8,35,20],
+        "scale-labels":["IDE","File-Management","Image-Generation","QA-testing"],
+        "title":"Dev Tools",
+        "colors":['#26C6DA','#80DEEA','#00838F','#00ACC1']
+    };
+    drilldownDataStructure["st"] = {
+        "data":[35,15,25,10],
+        "scale-labels":["Firewall","Cache-control","Link-access","HTTP-Comp"],
+        "title":"Security Tools",
+        "colors":["#1565C0","#42A5F5","#1E88E5","#90CAF9"]
+    };
+    drilldownDataStructure["dm"] = {
+        "data":[10,25,35],
+        "scale-labels":["Relational","Non-relational","Cluster"],
+        "title":"Data Management",
+        "colors":["#5E35B1","#4527A0","#7E57C2"]
+    };
+     
+     
+    /*
+    * Built in zingchart API event used to capture node click events.
+    * Starting from this scope you will handle drilldown functionality.
+    */
+    zingchart.node_click = function(p) {
+      var plotIndex = p.plotindex;
+      var scaleText = p.scaletext;
+       
+      // You could use this data to help construct drilldown graphs check it out...
+      //console.log(p);
+      if (drilldownDataStructure[p['data-id']]) {
+        drilldownConfig['title']['text'] = drilldownDataStructure[p['data-id']]['title'];
+        drilldownConfig['scale-x']['values'] = drilldownDataStructure[p['data-id']]['scale-labels'];
+        drilldownConfig['series'][0]['values'] = drilldownDataStructure[p['data-id']]['data'];
+        drilldownConfig['series'][0]['styles'] = drilldownDataStructure[p['data-id']]['colors'];
+        zingchart.exec('myChart', 'destroy');
+        zingchart.render({
+        	id : 'drilldown1', 
+        	data : drilldownConfig, 
+          height: 450, 
+        	width: '100%' 
+        });
+      }
+    }
+     
+    /*
+    * Handle history buttons. You can assign
+    * shapes id's and based on id you can go 
+    * 'forward' or 'backwards'. You could 
+    * also handle this with HTML and register
+    * click events to those DOM elements.
+    */
+    zingchart.shape_click = function(p) {
+      var shapeId = p.shapeid;
+      //console.log(p);
+      
+      switch(shapeId) {
+        case 'forwards':
+        case 'backwards':
+        case 'default':
+          zingchart.exec('drilldown1', 'destroy');
+          zingchart.render({
+          	id : 'myChart', 
+          	data : originalConfig, 
+            height: 450, 
+          	width: '100%' 
+          });
+          break;
+      }
+    }</script></div>
+						<div class="column2">
+								<div id='myChart2'><a class="zc-ref" href="https://www.zingchart.com/"></a></div>
+								<script>
+							
+
+    var originalConfig =     {
+        "type":"ring",
+        "title":{
+          "text":"Churners"
+        },
+        "plot":{
+            "detach":false,
+            "cursor":"hande",
+            "shadow":8,
+            "tooltip":{
+                "visible":false
+            },
+            "animation":{
+                "delay":10,
+                "effect":"2",
+                "speed":"ANIMATION_SLOW",
+                "method":"1",
+                "sequence":"3",
+                "attributes":{
+                    
+                }
+            },
+            "value-box":{
+                "color":"#FFF",
+                "text":"%t",
+                "font-weight":"none",
+                "font-size":14
+            }
+        },
+        "series":[
+            {
+                "values":[69],
+                "background-color":"#999999",
+                "text":"Young<br>citizens",
+                "data-id":"vt"
+            },
+            {
+                "values":[69],
+                "background-color":"#FCE407",
+                "text":"With<br>dependents",
+                "data-id":"sp"
+            },
+            {
+                "values":[69],
+                "background-color":"#2c973e",
+                "text":"With mobile<br>phone service",
+                "data-id":"dt"
+            },
+            {
+                "values":[69],
+                "background-color":"#91278f",
+                "text":"High<br>monthly charges",
+                "data-id":"st"
+            },
+            {
+                "values":[69],
+                "background-color":"#00a3ae",           
+                "text":"Fiber<br>optic",
+                "data-id":"dm"
+            }
+        ]
+    }
+     
+    zingchart.render({ 
+    	id : 'myChart2', 
+    	data : originalConfig, 
+    	height: 450, 
+    	width: '100%' 
+    });
+     
+     
+     
+    /************************
+     *  Secondary Charts
+     * *********************/
+    var drilldownConfig = {
+        "type":"bar",
+        "title":{
+            "text":"Security Tools"
+        },
+        "plotarea": {
+            "margin":"dynamic"
+        },
+        "plot":{
+            "animation":{
+                "delay":10,
+                "effect":"4",
+                "speed":"1200",
+                "method":"1",
+                "sequence":"3"
+            },
+            "tooltip":{
+                "text": "Quantity: %v",
+                "shadow":true,
+                "shadowAlpha":.5,
+                "shadowBlur":2,
+                "shadowDistance":3,
+                "shadowColor":"#c4c4c4",
+                "borderWidth":0,
+                "font-size":18
+            }
+        },
+        "series":[
+            {
+                "values":[35,15,25,10],
+                "styles":["#1565C0","#42A5F5","#1E88E5","#90CAF9"]
+            }
+        ],
+        "scale-x":{
+            "line-color":"#555",
+            "tick":{
+                "line-color":"#555"
+            },
+            "values":["Firewall","Cache-control","Link-access","HTTP-Comp"],
+            "item":{
+            	"max-chars":9,
+                "color":"#555",
+                "font-size":12
+            },
+            "label":{
+                "text":"Type",
+                "color":"#555",
+                "font-weight":"none",
+                "font-size":16
+            }
+        },
+        "scale-y":{
+            "line-color":"#555",
+            "tick":{
+                "line-color":"#555"
+            },
+            "item":{
+                "color":"#555",
+                "font-size":12
+            },
+            "guide":{
+                "visible":false
+            },
+            "label":{
+                "text":"Quantity",
+                "color":"#555",
+                "font-weight":"none",
+                "font-size":16
+            }
+        },
+        "shapes":[
+           {
+            'x':20,
+            'y':20,
+            'size':10,
+            'angle':-90,
+            'type':'triangle',
+            'background-color':'#C4C4C4',
+            'padding':5,
+            'cursor':'hand',
+            'id': 'backwards'
+          }
+        ]
+    };
+     
+    /**
+     * Create associative array to manage drilldown config
+     */
+    var drilldownDataStructure = [];
+    drilldownDataStructure["vt"] = {
+        "data":[10,25,35],
+        "scale-labels":["Grid-component","Map-tool","Web-charting"],
+        "title":"Visualization Tools",
+        "colors":["#EF5350","#E53935","#C62828"]
+    };
+    drilldownDataStructure["sp"] = {
+        "data":[15,5,35,20],
+        "scale-labels":["Speed-test","Error-tracking","Load-testing","User-monitoring"],
+        "title":"Site Performance",
+        "colors":["#26A69A","#80CBC4","#00695C","#00897B"]
+    };
+    drilldownDataStructure["dt"] = {
+        "data":[20,8,35,20],
+        "scale-labels":["IDE","File-Management","Image-Generation","QA-testing"],
+        "title":"Dev Tools",
+        "colors":['#26C6DA','#80DEEA','#00838F','#00ACC1']
+    };
+    drilldownDataStructure["st"] = {
+        "data":[35,15,25,10],
+        "scale-labels":["Firewall","Cache-control","Link-access","HTTP-Comp"],
+        "title":"Security Tools",
+        "colors":["#1565C0","#42A5F5","#1E88E5","#90CAF9"]
+    };
+    drilldownDataStructure["dm"] = {
+        "data":[10,25,35],
+        "scale-labels":["Relational","Non-relational","Cluster"],
+        "title":"Data Management",
+        "colors":["#5E35B1","#4527A0","#7E57C2"]
+    };
+     
+     
+    /*
+    * Built in zingchart API event used to capture node click events.
+    * Starting from this scope you will handle drilldown functionality.
+    */
+    zingchart.node_click = function(p) {
+      var plotIndex = p.plotindex;
+      var scaleText = p.scaletext;
+       
+      // You could use this data to help construct drilldown graphs check it out...
+      //console.log(p);
+      if (drilldownDataStructure[p['data-id']]) {
+        drilldownConfig['title']['text'] = drilldownDataStructure[p['data-id']]['title'];
+        drilldownConfig['scale-x']['values'] = drilldownDataStructure[p['data-id']]['scale-labels'];
+        drilldownConfig['series'][0]['values'] = drilldownDataStructure[p['data-id']]['data'];
+        drilldownConfig['series'][0]['styles'] = drilldownDataStructure[p['data-id']]['colors'];
+        zingchart.exec('myChart', 'destroy');
+        zingchart.render({
+        	id : 'drilldown1', 
+        	data : drilldownConfig, 
+          height: 450, 
+        	width: '100%' 
+        });
+      }
+    }
+     
+    /*
+    * Handle history buttons. You can assign
+    * shapes id's and based on id you can go 
+    * 'forward' or 'backwards'. You could 
+    * also handle this with HTML and register
+    * click events to those DOM elements.
+    */
+    zingchart.shape_click = function(p) {
+      var shapeId = p.shapeid;
+      //console.log(p);
+      
+      switch(shapeId) {
+        case 'forwards':
+        case 'backwards':
+        case 'default':
+          zingchart.exec('drilldown1', 'destroy');
+          zingchart.render({
+          	id : 'myChart', 
+          	data : originalConfig, 
+            height: 450, 
+          	width: '100%' 
+          });
+          break;
+      }
+    }</script></div>
+				</div>
+		</div>
+				<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
