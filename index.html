@@ -57,7 +57,7 @@
 								<h1>Peers' search</h1>
 								
 								<p>Please fill in the information about the firm you want to value: <p>
-								<form action="generic.html" method="post">
+								<form action= "{{ url_for('new_data') }}" method="post">
 									
 								    <div>
 									<label for="name">Name:</label>
@@ -119,8 +119,8 @@
 									<input type="number" id="quick_ratio" name="quick_ratio">
 								    </div>
 																
-								    <div class="button"> Submit
-    								    </div>
+								    <div class="button"><a href="generic.html">Submit</a></div>
+										       
 											     
 							 	</form>
 					
