@@ -29,6 +29,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 	
+datalist {
+  display: none;
+}
+
 form {
   /* Uniquement centrer le formulaire sur la page */
   margin: 0 auto;
