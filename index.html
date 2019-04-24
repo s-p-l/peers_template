@@ -41,11 +41,11 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Descriptive statistics</a></li>
-							<li><a href="generic2.html">Hierarchical classification</a></li>
-							<li><a href="generic3.html">Features selection</a></li>
-							<li><a href="generic4.html">Model performance</a></li>
-							<li><a href="generic5.html">Results</a></li>
+							<li><a href="generic.html">Automated selection</a></li>
+							<li><a href="generic2.html">Manual selection</a></li>
+							<!--<li><a href="generic3.html">Features selection</a></li>-->
+							<!--<li><a href="generic4.html">Model performance</a></li>-->
+							<!--<li><a href="generic5.html">Results</a></li> -->
 						</ul>
 					</nav>
 
@@ -54,6 +54,22 @@
 						<div class="inner">
 							<header>
 								<h1>Peers' search</h1>
+								
+								<form action="/ma-page-de-traitement" method="post">
+								    <div>
+									<label for="name">Nom :</label>
+									<input type="text" id="name" name="user_name">
+								    </div>
+								    <div>
+									<label for="mail">e-mail :</label>
+									<input type="email" id="mail" name="user_mail">
+								    </div>
+								    <div>
+									<label for="msg">Message :</label>
+									<textarea id="msg" name="user_message"></textarea>
+								    </div>
+								</form>
+								
 								<p>Please choose wether you want the algorithm to select the characteristics or if you prefer to do it by yourself. <br>
 								<!--<p>The data comes from a telco company providing mobile, landline and Internet services.</p>
 							-->
